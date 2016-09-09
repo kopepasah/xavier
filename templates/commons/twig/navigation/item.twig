@@ -1,0 +1,21 @@
+{##
+ # Template:    Navigation Item
+ # Description: A singular navigation list item.
+ # Package:     Xavier
+##}
+
+<a
+	href="{{ item.url }}"
+
+	{% if item.target %}
+		target="{{ item.target }}"
+	{% endif %}
+
+	{% if item.attr_title %}
+		title="{{ item.attr_title }}"
+	{% endif %}
+
+	{% if item.rel %}
+		rel="{{ item.rel }}"
+	{% endif %}
+>{{ item.title }}</a>

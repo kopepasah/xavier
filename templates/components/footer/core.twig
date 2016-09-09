@@ -1,0 +1,11 @@
+{##
+ # Template:    Footer
+ # Description: The site footer.
+ # Package:     Xavier
+##}
+
+<footer class="site-footer">
+	{% block logo %}
+		{% include 'commons/twig/logo/default.twig' with { logo_element : 'span' } %}
+	{% endblock %}
+</footer>

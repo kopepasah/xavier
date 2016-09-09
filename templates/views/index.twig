@@ -1,1 +1,15 @@
-{# Hello World #}
+{##
+ # Template:    Index
+ # Description: The default fallback template.
+ # Package:     Xavier
+##}
+
+{% extends 'commons/twig/base.twig' %}
+
+{% block content %}
+	<section class="site-content">
+		{% for post in posts %}
+			{% include 'components/article/core.twig' %}
+		{% endfor %}
+	</section>
+{% endblock %}

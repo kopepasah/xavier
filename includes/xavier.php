@@ -15,6 +15,7 @@ require_once __DIR__ . '/php/class-theme.php';
 require_once __DIR__ . '/php/class-compatability.php';
 require_once __DIR__ . '/php/class-setup.php';
 require_once __DIR__ . '/php/class-router.php';
+require_once __DIR__ . '/php/class-menu.php';
 
 // Initilaze Xavier.
 $GLOBALS['xavier'] = new Theme();

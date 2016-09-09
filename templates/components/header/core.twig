@@ -1,0 +1,10 @@
+{##
+ # Template:    Header
+ # Description: The site header.
+ # Package:     Xavier
+##}
+
+<header class="site-header">
+	{% include 'commons/twig/logo/default.twig' %}
+	{% include 'commons/twig/navigation/default.twig' with { menu : 'header' } %}
+</header>

@@ -34,6 +34,13 @@ class Theme {
 	public $router;
 
 	/**
+	 * Template router.
+	 *
+	 * @var Router
+	 */
+	public $menu;
+
+	/**
 	 * Theme constructor.
 	 */
 	public function __construct() {
@@ -43,6 +50,7 @@ class Theme {
 		} else {
 			$this->setup = new Setup( $this );
 			$this->router = new Router( $this );
+			$this->menu = new Menu( $this );
 		}
 	}
 

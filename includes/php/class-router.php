@@ -19,7 +19,10 @@ class Router extends Module {
 	 *
 	 * @var dirname (string)
 	 */
-	private $dirname = 'templates/views';
+	private $dirname = array(
+		'templates/views',
+		'templates',
+	);
 
 	/**
 	 * Template configs.
