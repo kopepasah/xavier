@@ -1,0 +1,23 @@
+{
+  "name": "xavier",
+  "version": "0.0.0",
+  "author": "Justin Kopepasah <justin@kopepasah.com>",
+  "description": "WordPress theme built with coffee and love.",
+  "homepage": "http://kopepasah.com/xavier",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kopepasah/xavier"
+  },
+  "bugs": {
+    "url": "https://github.com/kopepasah/xavier/issues"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-sass": "^1.0.0",
+    "load-grunt-config": "^0.19.2",
+    "time-grunt": "^1.4.0"
+  },
+  "develop_directory": ".",
+  "template_directory": ".."
+}

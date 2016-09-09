@@ -1,0 +1,12 @@
+/**!
+ * Theme Name: Xavier
+ * Theme URI: http://github.com/kopepasah/xavier
+ * Author: Justin Kopepasah
+ * Author URI: http://kopepasah.com
+ * Description: Yo. I am just a simple WordPress theme built with coffee and love.
+ * Version: 0.0.0
+ * License: MIT
+ * License URI: http://en.wikipedia.org/wiki/MIT_License
+ * Text Domain: xavier
+ * Tags: simple, minimal, asynchronous
+ */
