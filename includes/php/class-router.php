@@ -90,7 +90,10 @@ class Router extends Module {
 	 * Check to see if the template exists in a specific location and, if so,
 	 * route to that new template.
 	 *
-	 * @todo Add DOC informaiton.
+	 * @param string $location The template location.
+	 * @param string $template The template.
+	 *
+	 * @return string $template The template.
 	 */
 	private function get_template( $location, $template ) {
 		if ( ! empty( locate_template( $location ) ) ) {
@@ -130,9 +133,9 @@ class Router extends Module {
 	/**
 	 * Filter the home template to look in our new templates directory.
 	 *
-	 * @param template The current template location.
+	 * @param string $template The current template location.
 	 *
-	 * @return template The filtered template location.
+	 * @return string $template The filtered template location.
 	 */
 	public function home_template( $template ) {
 		$location = $this->configs . 'home.php';
@@ -143,9 +146,9 @@ class Router extends Module {
 	/**
 	 * Filter the front page template to look in our new templates directory.
 	 *
-	 * @param template The current template location.
+	 * @param string $template The current template location.
 	 *
-	 * @return template The filtered template location.
+	 * @return string $template The filtered template location.
 	 */
 	public function frontpage_template( $template ) {
 		$location = $this->configs . 'front.php';
@@ -156,9 +159,9 @@ class Router extends Module {
 	/**
 	 * Filter the singular template to look in our new templates directory.
 	 *
-	 * @param template The current template location.
+	 * @param string $template The current template location.
 	 *
-	 * @return template The filtered template location.
+	 * @return string $template The filtered template location.
 	 */
 	public function singular_template( $template ) {
 		$location = $this->configs . 'singular.php';
@@ -171,7 +174,7 @@ class Router extends Module {
 	 *
 	 * @param string $template The current template location.
 	 *
-	 * @return template The filtered template location.
+	 * @return string $template The filtered template location.
 	 */
 	public function single_template( $template ) {
 		$location = $this->configs . 'single.php';
