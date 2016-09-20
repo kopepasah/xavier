@@ -1,0 +1,16 @@
+/**!
+ * Project: Xavier
+ * Description: WordPress theme built with coffee and love. See README.md for more information.
+ */
+
+// Libs
+@import "normalize";
+
+// Commons
+@import "mixins/init";
+@import "variables/init";
+
+// Components
+@import "header";
+@import "footer";
+@import "article";

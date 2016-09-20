@@ -1,2 +1,6 @@
+# Global Ignores
 .DS_Store
 node_modules
+
+# Development Related Ignores
+/develop/sass/cache

@@ -20,6 +20,13 @@ class Theme {
 	public $compatability;
 
 	/**
+	 * Assets.
+	 *
+	 * @var Assets
+	 */
+	public $assets;
+
+	/**
 	 * Setup.
 	 *
 	 * @var Setup
@@ -45,13 +52,14 @@ class Theme {
 	 */
 	public function __construct() {
 		// If Timber is not active, do not activate Xavier.
-		if ( is_plugin_inactive( 'timber-library/timber.php' ) ) {
+		if ( is_admin() && is_plugin_inactive( 'timber-library/timber.php' ) ) {
 			$this->compatability = new Compatability( $this );
-		} else {
-			$this->setup = new Setup( $this );
-			$this->router = new Router( $this );
-			$this->menu = new Menu( $this );
 		}
+
+		$this->assets = new Assets( $this );
+		$this->setup = new Setup( $this );
+		$this->router = new Router( $this );
+		$this->menu = new Menu( $this );
 	}
 
 	/**
