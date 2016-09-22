@@ -51,11 +51,7 @@ class Theme {
 	 * Theme constructor.
 	 */
 	public function __construct() {
-		// If Timber is not active, do not activate Xavier.
-		if ( is_admin() && is_plugin_inactive( 'timber-library/timber.php' ) ) {
-			$this->compatability = new Compatability( $this );
-		}
-
+		$this->compatability = new Compatability( $this );
 		$this->assets = new Assets( $this );
 		$this->setup = new Setup( $this );
 		$this->router = new Router( $this );
