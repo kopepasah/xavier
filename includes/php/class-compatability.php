@@ -21,10 +21,6 @@ class Compatability extends Module {
 	 * @var array $required
 	 */
 	public $required = array(
-		'timber-library/timber.php' => array(
-			'name' => 'Timber',
-			'url'  => 'https://wordpress.org/plugins/timber-library/',
-		),
 		'rest-api/plugin.php' => array(
 			'name' => 'WP REST API',
 			'url'  => 'https://wordpress.org/plugins/rest-api/',
