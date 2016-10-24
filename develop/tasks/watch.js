@@ -4,17 +4,9 @@
  */
 
 module.exports = {
-	scripts: {
-		files: ['<%= template_directory %>/templates/**/*.js'],
-		tasks: ['webpack:watch'],
-		options: {
-			spawn: false,
-		},
-	},
-
 	styles: {
-		files: ['<%= template_directory %>/templates/**/*.scss'],
-		tasks: ['sass:develop'],
+		files: ['./templates/**/*.scss'],
+		tasks: ['sass:develop','sass:build'],
 		options: {
 			spawn: false,
 		},

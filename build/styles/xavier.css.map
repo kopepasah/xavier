@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA;;;GAGG;ACHH;;GAEG",
-"sources": ["../../templates/commons/scss/core.scss","../../templates/commons/scss/libs/normalize.scss"],
-"names": [],
-"file": "xavier.css"
-}

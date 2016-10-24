@@ -11,9 +11,9 @@ module.exports = {
 		files: [
 			{
 				expand : true,
-				cwd    : '<%= package.template_directory %>/build/scripts',
-				src    : [ '**/*.js', '!libs/**/*.js' ],
-				dest   : '<%= package.template_directory %>/build/scripts',
+				cwd    : './assets/js',
+				src    : [ '**/*.js', '!**/*.min.js', '!libs/**/*.js' ],
+				dest   : './assets/js',
 				ext    : '.min.js',
 			}
 		]

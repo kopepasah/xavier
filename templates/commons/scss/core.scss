@@ -3,14 +3,8 @@
  * Description: WordPress theme built with coffee and love. See README.md for more information.
  */
 
-// Libs
-@import "normalize";
+// Bootstrap Variables
+@import "variables";
 
-// Commons
-@import "mixins/init";
-@import "variables/init";
-
-// Components
-@import "header";
-@import "footer";
-@import "article";
+// Bootstrap
+@import "bootstrap/bootstrap";

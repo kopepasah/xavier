@@ -8,9 +8,15 @@ module.exports = {
 		files: [
 			{
 				expand: true,
-				cwd: '<%= develop_directory %>/node_modules/vue/dist',
-				src: ['vue.js','vue.min.js','vue.min.js.map'],
-				dest: '<%= template_directory %>/build/scripts/libs/vue',
+				cwd: './node_modules/bootstrap/dist/js',
+				src: ['bootstrap.js','bootstrap.min.js'],
+				dest: './assets/js/libs/bootstrap',
+			},
+			{
+				expand: true,
+				cwd: './node_modules/bootstrap/scss/',
+				src: ['**'],
+				dest: './templates/commons/scss/libs/bootstrap',
 			}
 		],
 	},

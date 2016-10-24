@@ -2,10 +2,28 @@
  * Bootstrap Xavier Core
  */
 
-var xavier = window.xavier = require( './utilities/init' );
+var xavier = window.xavier || {};
 
-// Components
-xavier.components.article = require( '../../components/article/js/article' );
+import Vue from 'vue'
+import VueResource from 'vue-resource'
+import VueRouter from 'vue-router'
+import Core from 'commons/core'
 
-console.log( 'Xavier is ready.' );
-console.log( xavier );
+Vue.use( VueResource );
+Vue.use( VueRouter );
+
+new Vue({
+	el : 'xavier',
+
+	http : {
+		root : xavier.utils.root,
+	},
+
+	render : h => h(Core),
+
+	template : '<Core/>',
+
+	components : {
+		Core
+	},
+});

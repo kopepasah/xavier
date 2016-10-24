@@ -15,21 +15,11 @@ namespace Xavier;
 class Router extends Module {
 
 	/**
-	 * Timber templates.
-	 *
-	 * @var dirname (string)
-	 */
-	private $dirname = array(
-		'templates/views',
-		'templates',
-	);
-
-	/**
 	 * Template configs.
 	 *
 	 * @var configs (string)
 	 */
-	private $configs = 'templates/views/configs';
+	private $configs = 'includes/configs';
 
 	/**
 	 * An array of template names.
@@ -61,6 +51,10 @@ class Router extends Module {
 			'prefix'   => 'single',
 			'priority' => -1000,
 		),
+		'archive' => array(
+			'prefix'   => 'archive',
+			'priority' => 100,
+		),
 	);
 
 	/**
@@ -75,15 +69,6 @@ class Router extends Module {
 				add_filter( $args['prefix'] . '_template', array( $this, $method . '_template' ), $args['priority'] );
 			}
 		}
-
-		add_action( 'after_setup_theme', array( $this, 'set_timber_dirname' ) );
-	}
-
-	/**
-	 * Set Timber template file location.
-	 */
-	public function set_timber_dirname() {
-		\Timber::$dirname = $this->dirname;
 	}
 
 	/**
@@ -102,7 +87,6 @@ class Router extends Module {
 
 		return $template;
 	}
-
 
 	/**
 	 * Filter the index template to look in our new templates directory.
@@ -178,6 +162,19 @@ class Router extends Module {
 	 */
 	public function single_template( $template ) {
 		$location = $this->configs . 'single.php';
+
+		return $this->get_template( $location, $template );
+	}
+
+	/**
+	 * Filter the single template to look in our new templates directory.
+	 *
+	 * @param string $template The current template location.
+	 *
+	 * @return string $template The filtered template location.
+	 */
+	public function archive_template( $template ) {
+		$location = $this->configs . 'archive.php';
 
 		return $this->get_template( $location, $template );
 	}

@@ -4,25 +4,14 @@
  */
 
 module.exports = {
-	banner : {
-		options: {
-			sourcemap: 'none',
-			noCache: true,
-			update: true
-		},
-		files: {
-			'<%= template_directory %>/style.css': '<%= develop_directory %>/sass/banner.txt',
-		},
-	},
-
 	develop : {
 		options: {
 			loadPath: '<%= scss.paths %>',
-			cacheLocation: '<%= develop_directory %>/sass/cache',
+			cacheLocation: './develop/sass/cache',
 			update: true
 		},
 		files: {
-			'<%= template_directory %>/build/styles/xavier.css': '<%= template_directory %>/templates/commons/scss/core.scss',
+			'./assets/css/xavier.css': './templates/commons/scss/core.scss',
 		},
 	},
 
@@ -30,11 +19,11 @@ module.exports = {
 		options: {
 			loadPath: '<%= scss.paths %>',
 			sourcemap: 'none',
-			cacheLocation: '<%= develop_directory %>/sass/cache',
+			cacheLocation: './develop/sass/cache',
 			style: 'compressed'
 		},
 		files: {
-			'<%= template_directory %>/build/styles/xavier.min.css': '<%= template_directory %>/templates/commons/scss/core.scss',
+			'./assets/css/xavier.min.css': './templates/commons/scss/core.scss',
 		},
 	},
 };

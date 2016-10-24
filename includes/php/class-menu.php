@@ -18,7 +18,15 @@ class Menu extends Module {
 	 * Initilizer
 	 */
 	public function init() {
-		add_filter( 'get_twig', array( $this, 'twig_menu_items' ) );
+		add_filter( 'xavier/configs', function( $configs ) {
+
+			$configs['menus'] = array(
+				'header' => $this->organize_menu_items( 'header' ),
+				'footer' => $this->organize_menu_items( 'footer' ),
+			);
+
+			return $configs;
+		} );
 	}
 
 	/**
@@ -87,15 +95,5 @@ class Menu extends Module {
 		}
 
 		return $menu;
-	}
-
-	/**
-	 * Adds a new Twig function to use within templates.
-	 */
-	public function twig_menu_items( $twig ) {
-		$twig->addExtension( new \Twig_Extension_StringLoader() );
-		$twig->addFunction( new \Twig_SimpleFunction( 'menu_items', array( $this, 'organize_menu_items' ) ) );
-
-		return $twig;
 	}
 }
