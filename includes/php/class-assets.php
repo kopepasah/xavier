@@ -28,7 +28,7 @@ class Assets extends Module {
 	 * Initilizer
 	 */
 	public function init() {
-		$this->ext['scripts'] = ( false ) ? '.js' : '.min.js';
+		$this->ext['scripts'] = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '.js' : '.min.js';
 		$this->ext['styles'] = ( defined( 'STYLE_DEBUG' ) && STYLE_DEBUG ) ? '.css' : '.min.css';
 
 		add_action( 'wp_enqueue_scripts', array( $this, 'register_assets' ) );
