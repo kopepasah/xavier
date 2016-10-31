@@ -13,7 +13,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "webpack --progress --hide-modules --config ./develop/configs/webpack.js"
+    "build": "webpack --progress --hide-modules --config ./build/configs/webpack.js"
   },
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.5",
