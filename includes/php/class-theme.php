@@ -34,11 +34,11 @@ class Theme {
 	public $setup;
 
 	/**
-	 * Template router.
+	 * Template configs.
 	 *
-	 * @var Router
+	 * @var Configs
 	 */
-	public $router;
+	public $configs;
 
 	/**
 	 * Template router.
@@ -54,7 +54,7 @@ class Theme {
 		$this->compatability = new Compatability( $this );
 		$this->assets = new Assets( $this );
 		$this->setup = new Setup( $this );
-		$this->router = new Router( $this );
+		$this->configs = new Configs( $this );
 		$this->menu = new Menu( $this );
 	}
 

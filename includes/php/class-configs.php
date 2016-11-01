@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Router
+ * Template Configs
  *
  * @package Xavier
  */
@@ -8,18 +8,18 @@
 namespace Xavier;
 
 /**
- * Class Router
+ * Class Configs
  *
  * @package Xavier
  */
-class Router extends Module {
+class Configs extends Module {
 
 	/**
 	 * Template configs.
 	 *
 	 * @var configs (string)
 	 */
-	private $configs = 'includes/configs';
+	private $configs = 'templates/configs';
 
 	/**
 	 * An array of template names.
