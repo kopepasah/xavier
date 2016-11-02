@@ -11,9 +11,9 @@ module.exports = {
 		files: [
 			{
 				expand : true,
-				cwd    : './assets/js',
+				cwd    : './includes/js',
 				src    : [ '**/*.js', '!**/*.min.js', '!libs/**/*.js' ],
-				dest   : './assets/js',
+				dest   : './includes/js',
 				ext    : '.min.js',
 			}
 		]

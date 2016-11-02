@@ -46,7 +46,7 @@ module.exports = {
 		path.join( xavier, '/templates/commons/js/core.js' ),
 	],
 	output : {
-		path: path.join( xavier, '/assets/js' ),
+		path: path.join( xavier, '/includes/js' ),
 		filename: 'xavier.js',
 	},
 	stats: {

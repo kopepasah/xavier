@@ -11,7 +11,7 @@ module.exports = {
 			update: true
 		},
 		files: {
-			'./assets/css/xavier.css': './templates/commons/scss/core.scss',
+			'./includes/css/xavier.css': './templates/commons/scss/core.scss',
 		},
 	},
 
@@ -23,7 +23,7 @@ module.exports = {
 			style: 'compressed'
 		},
 		files: {
-			'./assets/css/xavier.min.css': './templates/commons/scss/core.scss',
+			'./includes/css/xavier.min.css': './templates/commons/scss/core.scss',
 		},
 	},
 };

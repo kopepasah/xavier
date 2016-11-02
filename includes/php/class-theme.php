@@ -20,11 +20,11 @@ class Theme {
 	public $compatability;
 
 	/**
-	 * Assets.
+	 * Enqueues.
 	 *
-	 * @var Assets
+	 * @var Enqueues
 	 */
-	public $assets;
+	public $enqueues;
 
 	/**
 	 * Setup.
@@ -52,7 +52,7 @@ class Theme {
 	 */
 	public function __construct() {
 		$this->compatability = new Compatability( $this );
-		$this->assets = new Assets( $this );
+		$this->enqueues = new Enqueues( $this );
 		$this->setup = new Setup( $this );
 		$this->configs = new Configs( $this );
 		$this->menu = new Menu( $this );

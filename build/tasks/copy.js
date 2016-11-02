@@ -10,7 +10,7 @@ module.exports = {
 				expand: true,
 				cwd: './node_modules/bootstrap/dist/js',
 				src: ['bootstrap.js','bootstrap.min.js'],
-				dest: './assets/js/libs/bootstrap',
+				dest: './includes/js/libs/bootstrap',
 			},
 			{
 				expand: true,
