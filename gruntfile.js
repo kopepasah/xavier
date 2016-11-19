@@ -9,7 +9,7 @@ module.exports = function( grunt ) {
 	 * See: https://www.npmjs.com/package/load-grunt-config
 	 */
 	require( 'load-grunt-config' )( grunt, {
-		configPath : path.join( process.cwd(), 'build/tasks' ),
+		configPath : path.join( process.cwd(), 'tasks' ),
 
 		data : {
 			scss : {

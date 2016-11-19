@@ -6,7 +6,7 @@
 var path = require( 'path' );
 var grunt = require( 'grunt' );
 var webpack = require( 'webpack' );
-var xavier = path.join( __dirname, '../..' );
+var xavier = path.join( __dirname );
 
 var vue = {
 	templates : {

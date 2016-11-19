@@ -1,6 +1,7 @@
 # Global Ignores
 .DS_Store
 node_modules
+npm-debug.log
 
 # Development Related Ignores
 /develop/sass
