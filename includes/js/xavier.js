@@ -11884,11 +11884,12 @@ return Vue$3;
 //
 //
 //
+//
 
 /* harmony default export */ exports["default"] = {
 	name: 'entry-title',
 
-	props: ['title', 'route']
+	props: ['title', 'route', 'id']
 };
 
 /***/ },
@@ -12293,7 +12294,7 @@ exports = module.exports = __webpack_require__(0)();
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -13061,14 +13062,26 @@ if (false) {
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports={render:function(){with(this) {
-  return (route) ? _h('h2', [_h('router-link', {
+  return (route) ? _h('h2', [(id) ? _h('router-link', {
+    attrs: {
+      "to": {
+        name: 'post',
+        params: {
+          id: id
+        }
+      }
+    },
+    domProps: {
+      "innerHTML": _s(title)
+    }
+  }) : _h('router-link', {
     attrs: {
       "to": route
     },
     domProps: {
       "innerHTML": _s(title)
     }
-  })]) : _h('h1', {
+  }), " "]) : _h('h1', {
     domProps: {
       "innerHTML": _s(title)
     }
