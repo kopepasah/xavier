@@ -19,7 +19,7 @@
     "bootstrap": "^4.0.0-alpha.5",
     "vue": "^2.0.0",
     "vue-resource": "^1.0.3",
-    "vue-router": "^2.0.1"
+    "vue-router": "2.0.1"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",
@@ -38,8 +38,8 @@
     "sass-loader": "^4.0.2",
     "time-grunt": "^1.4.0",
     "uglify-js": "^2.7.4",
-    "vue-loader": "^9.2.2",
-    "webpack": "^2.1.0-beta.25",
-    "webpack-dev-server": "^2.1.0-beta.0"
+    "vue-loader": "9.2.2",
+    "webpack": "2.1.0-beta.25",
+    "webpack-dev-server": "2.1.0-beta.0"
   }
 }
