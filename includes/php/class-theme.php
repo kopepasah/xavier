@@ -52,10 +52,10 @@ class Theme {
 	 */
 	public function __construct() {
 		$this->compatability = new Compatability( $this );
-		$this->enqueues = new Enqueues( $this );
-		$this->setup = new Setup( $this );
-		$this->configs = new Configs( $this );
-		$this->menu = new Menu( $this );
+		$this->enqueues      = new Enqueues( $this );
+		$this->setup         = new Setup( $this );
+		$this->configs       = new Configs( $this );
+		$this->menu          = new Menu( $this );
 	}
 
 	/**
