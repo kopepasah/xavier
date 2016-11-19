@@ -69,7 +69,7 @@ class Menu extends Module {
 		foreach ( $items as $item ) {
 			if ( '0' === $item->menu_item_parent ) {
 				$menu[ $item->ID ] = array(
-					'url'         => $item->url,
+					'route'       => str_replace( home_url(), '', $item->url ),
 					'title'       => $item->title,
 					'target'      => $item->target,
 					'attr_title'  => $item->attr_title,
@@ -80,7 +80,7 @@ class Menu extends Module {
 				);
 			} elseif ( isset( $menu[ $item->menu_item_parent ] ) ) {
 				$menu[ $item->menu_item_parent ]['children'][ $item->ID ] = array(
-					'url'         => $item->url,
+					'route'       => str_replace( home_url(), '', $item->url ),
 					'title'       => $item->title,
 					'target'      => $item->target,
 					'attr_title'  => $item->attr_title,

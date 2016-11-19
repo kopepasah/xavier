@@ -1,7 +1,7 @@
 <template>
 	<ul class="nav navbar-nav float-lg-right" role="navigation" aria-label="Site Navigation">
 		<li class="nav-item" v-for="item in items">
-			<a class="nav-link" v-bind:href="item.url">{{ item.title }}</a>
+			<router-link :to="item.route" class="nav-link">{{ item.title }}</router-link>
 		</li>
 	</ul>
 </template>

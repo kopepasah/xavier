@@ -47,13 +47,53 @@ class Enqueues extends Module {
 		wp_enqueue_style( 'xavier' );
 		wp_enqueue_script( 'xavier' );
 
-		wp_localize_script( 'xavier', 'xavier', apply_filters( 'xavier/configs', array( // WPCS: input var okay.
+		wp_localize_script( 'xavier', 'xavier', apply_filters( 'xavier/configs', array( // @codingStandardsIgnoreLine
+			'routes' => $this->routes(),
 			'utils' => array(
 				'root'      => esc_url_raw( rest_url() ),
-				'home_url'  => esc_url_raw( home_url() ),
+				'home'      => esc_url_raw( home_url() ),
 				'nonce'     => wp_create_nonce( 'wp_rest' ),
 				'site_name' => get_bloginfo( 'name' ),
 			),
 		) ) );
 	}
+
+	/**
+	 * Routes (TEMP)
+	 */
+	public function routes() {
+		$routes = array(
+			array(
+				'component' => 'Posts',
+				'path'      => '/',
+			),
+			array(
+				'component' => 'Posts',
+				'name'      => 'paged',
+				'path'      => '/page/:page',
+			),
+		);
+
+		$query = new \WP_Query( array(
+			'post_type'      => 'any',
+			'post_status'    => 'publish',
+			'posts_per_page' => -1,
+		) );
+
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+				$routes[] = array(
+					'id'        => get_the_ID(),
+					'component' => ucfirst( get_post_type() ),
+					'path'      => '/' . basename( get_permalink() ),
+				);
+			}
+		}
+
+		wp_reset_postdata();
+
+		return $routes;
+	}
+
 }

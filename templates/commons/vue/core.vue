@@ -9,7 +9,7 @@
 <script>
 import Mast from 'components/header';
 import Keel from 'components/footer';
-import Deck from 'components/posts';
+import Deck from 'components/content';
 
 export default {
 	name : 'xavier',

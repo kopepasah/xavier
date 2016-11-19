@@ -26,7 +26,7 @@ grunt.file.recurse( path.join( xavier, '/templates/components' ), function( absp
 	if ( filename.match( /\.vue$/g ) ) {
 		var alias = {}, name = '';
 
-		if ( subdir.match( /\/vue$/g ) ) {
+		if ( subdir.match( /\/vue/g ) ) {
 			name = path.join( subdir.replace( '/vue', '' ), filename.replace( '.vue', '' ) )
 		} else {
 			name = path.join( 'components', filename.replace( '.vue', '' ) )

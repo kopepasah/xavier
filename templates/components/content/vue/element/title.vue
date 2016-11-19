@@ -1,5 +1,7 @@
 <template>
-	<h2 v-if="link"><a v-bind:href="link" v-html="title"></a></h2>
+	<h2 v-if="route">
+		<router-link :to="route" v-html="title"></router-link>
+	</h2>
 	<h1 v-else v-html="title"></h1>
 </template>
 
@@ -7,7 +9,7 @@
 export default {
 	name : 'entry-title',
 
-	props : [ 'title', 'link' ],
+	props : [ 'title', 'route' ],
 };
 </script>
 

@@ -12,7 +12,14 @@ import Core from 'commons/core'
 Vue.use( VueResource );
 Vue.use( VueRouter );
 
+xavier.router = new VueRouter({
+	mode : 'history',
+	routes : xavier.routes,
+});
+
 new Vue({
+	router : xavier.router,
+
 	el : 'xavier',
 
 	http : {

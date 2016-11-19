@@ -1,7 +1,7 @@
 <template>
 	<header class="container">
 		<nav class="navbar navbar-dark bg-inverse">
-			<a v-bind:href="utils.home_url" rel="home" class="navbar-brand">{{ utils.site_name }}</a>
+			<router-link to="/" rel="home" class="navbar-brand">{{ utils.site_name }}</router-link>
 
 			<sail></sail>
 		</nav>
