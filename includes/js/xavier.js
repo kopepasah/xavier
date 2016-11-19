@@ -11925,16 +11925,23 @@ return Vue$3;
 		};
 	},
 	created: function created() {
-		this.load(xavier.query.post.ID);
+		if ('undefined' !== typeof this.$route.params.id) {
+			this.page.id = this.$route.params.id;
+		} else {
+			this.page.id = xavier.query.post.ID;
+		}
+
+		this.load(this.page.id);
 	},
 
 
 	methods: {
-		load: function load(post) {
+		load: function load(id) {
 			var _this = this;
 
-			console.log(xavier.query);
-			this.$http.get(xavier.utils.root + 'wp/v2/pages/' + xavier.query.post.ID).then(function (response) {
+			console.log(id);
+			this.$http.get(xavier.utils.root + 'wp/v2/pages/' + id).then(function (response) {
+				console.log(response.body);
 				_this.page = {
 					data: response.body,
 					title: response.body.title.rendered,
@@ -11984,15 +11991,21 @@ return Vue$3;
 		};
 	},
 	created: function created() {
-		this.load(xavier.query.post.ID);
+		if ('undefined' !== typeof this.$route.params.id) {
+			this.post.id = this.$route.params.id;
+		} else {
+			this.post.id = xavier.query.post.ID;
+		}
+
+		this.load(this.post.id);
 	},
 
 
 	methods: {
-		load: function load(post) {
+		load: function load(id) {
 			var _this = this;
 
-			this.$http.get(xavier.utils.root + 'wp/v2/posts/' + xavier.query.post.ID).then(function (response) {
+			this.$http.get(xavier.utils.root + 'wp/v2/posts/' + id).then(function (response) {
 				_this.post = {
 					data: response.body,
 					title: response.body.title.rendered,
@@ -12161,6 +12174,7 @@ return Vue$3;
 //
 //
 //
+//
 
 /* harmony default export */ exports["default"] = {
 	name: 'sail',
@@ -12237,7 +12251,7 @@ exports = module.exports = __webpack_require__(0)();
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -12251,7 +12265,7 @@ exports = module.exports = __webpack_require__(0)();
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -12932,13 +12946,22 @@ module.exports={render:function(){with(this) {
   }, [_l((items), function(item) {
     return _h('li', {
       staticClass: "nav-item"
-    }, [_h('router-link', {
+    }, [(item.id) ? _h('router-link', {
       staticClass: "nav-link",
       attrs: {
-        "to": item.route,
-        "data-id": item.id
+        "to": {
+          name: item.type,
+          params: {
+            id: item.id
+          }
+        }
       }
-    }, [_s(item.title)])])
+    }, [_s(item.title)]) : _h('router-link', {
+      staticClass: "nav-link",
+      attrs: {
+        "to": item.route
+      }
+    }, [_s(item.title)]), " "])
   })])
 }},staticRenderFns: []}
 if (false) {
