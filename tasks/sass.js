@@ -7,7 +7,7 @@ module.exports = {
 	develop : {
 		options: {
 			loadPath: '<%= scss.paths %>',
-			cacheLocation: './develop/sass/cache',
+			cacheLocation: './templates/commons/scss/cache',
 			update: true
 		},
 		files: {
@@ -19,7 +19,7 @@ module.exports = {
 		options: {
 			loadPath: '<%= scss.paths %>',
 			sourcemap: 'none',
-			cacheLocation: './develop/sass/cache',
+			cacheLocation: './templates/commons/scss/cache',
 			style: 'compressed'
 		},
 		files: {

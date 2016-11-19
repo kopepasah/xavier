@@ -33,9 +33,8 @@ module.exports = function( grunt ) {
 	// Register grunt tasks.
 	grunt.registerTask(
 		'build', [
-			'sass:build',
 			'copy:libs',
-			'webpack:build',
+			'sass:build',
 			'uglify:build',
 		]
 	);

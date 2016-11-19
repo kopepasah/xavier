@@ -4,4 +4,4 @@ node_modules
 npm-debug.log
 
 # Development Related Ignores
-/develop/sass
+/templates/commons/scss/cache
