@@ -69,6 +69,8 @@ class Menu extends Module {
 		foreach ( $items as $item ) {
 			if ( '0' === $item->menu_item_parent ) {
 				$menu[ $item->ID ] = array(
+					'id'          => ( 0 !== url_to_postid( $item->url ) ) ? url_to_postid( $item->url ) : false,
+					'url'         => $item->url,
 					'route'       => str_replace( home_url(), '', $item->url ),
 					'title'       => $item->title,
 					'target'      => $item->target,
@@ -77,9 +79,12 @@ class Menu extends Module {
 					'classes'     => ( empty( $item->classes[0] ) ) ? '' :  ' ' . implode( ' ', $item->classes ),
 					'rel'         => $item->xfn,
 					'children'    => false,
+					'type'        => $item->object,
 				);
 			} elseif ( isset( $menu[ $item->menu_item_parent ] ) ) {
 				$menu[ $item->menu_item_parent ]['children'][ $item->ID ] = array(
+					'id'          => ( 0 !== url_to_postid( $item->url ) ) ? url_to_postid( $item->url ) : false,
+					'url'         => $item->url,
 					'route'       => str_replace( home_url(), '', $item->url ),
 					'title'       => $item->title,
 					'target'      => $item->target,
@@ -87,6 +92,7 @@ class Menu extends Module {
 					'description' => $item->description,
 					'classes'     => ( empty( $item->classes[0] ) ) ? '' : ' ' . implode( ' ', $item->classes ),
 					'rel'         => $item->xfn,
+					'type'        => $item->object,
 				);
 			} else {
 				// If is a submenu, but nested three levels or above, skip.

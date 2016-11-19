@@ -24,12 +24,18 @@ export default {
 	},
 
 	created () {
-		this.load( xavier.query.post.ID );
+		if ( 'undefined' !== typeof this.$route.params.id ) {
+			this.post.id = this.$route.params.id;
+		} else {
+			this.post.id = xavier.query.post.ID;
+		}
+
+		this.load( this.post.id );
 	},
 
 	methods : {
-		load : function( post ) {
-			this.$http.get( xavier.utils.root + 'wp/v2/posts/' + xavier.query.post.ID ).then( ( response ) => {
+		load : function( id ) {
+			this.$http.get( xavier.utils.root + 'wp/v2/posts/' + id ).then( ( response ) => {
 				this.post = {
 					data    : response.body,
 					title   : response.body.title.rendered,

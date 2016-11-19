@@ -85,6 +85,7 @@ class Enqueues extends Module {
 				$query->the_post();
 				$routes[] = array(
 					'id'        => get_the_ID(),
+					'name'      => get_post_type(),
 					'component' => ucfirst( get_post_type() ),
 					'path'      => '/' . basename( get_permalink() ),
 				);

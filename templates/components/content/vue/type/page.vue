@@ -24,13 +24,20 @@ export default {
 	},
 
 	created () {
-		this.load( xavier.query.post.ID );
+		if ( 'undefined' !== typeof this.$route.params.id ) {
+			this.page.id = this.$route.params.id;
+		} else {
+			this.page.id = xavier.query.post.ID;
+		}
+
+		this.load( this.page.id );
 	},
 
 	methods : {
-		load : function( post ) {
-			console.log(xavier.query);
-			this.$http.get( xavier.utils.root + 'wp/v2/pages/' + xavier.query.post.ID ).then( ( response ) => {
+		load : function( id ) {
+			console.log( id );
+			this.$http.get( xavier.utils.root + 'wp/v2/pages/' + id ).then( ( response ) => {
+				console.log( response.body );
 				this.page = {
 					data    : response.body,
 					title   : response.body.title.rendered,
